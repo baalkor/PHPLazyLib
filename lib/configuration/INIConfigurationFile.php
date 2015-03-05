@@ -2,7 +2,10 @@
 define("PROCESS_SECTIONS", true);
 
 require_once 'ConfigurationFile.php';
-
+/*
+* ConfigurationFile 
+*
+*/
 class INIConfigurationFile extends ConfigurationFile {
 
     function open($file) {
@@ -12,6 +15,7 @@ class INIConfigurationFile extends ConfigurationFile {
         
    
     }
+	
     function __construct($file) {
         parent::__construct($file);
         
