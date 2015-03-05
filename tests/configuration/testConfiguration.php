@@ -1,5 +1,5 @@
 <?php
-    require_once '../../configuration/INIConfigurationFile.php';
+    require_once '../../lib/configuration/INIConfigurationFile.php';
     function testConfiguationParser()
     {
         $a = new INIConfigurationFile("config.ini");
