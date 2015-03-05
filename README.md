@@ -70,6 +70,7 @@ Example
 This class is a simple tool to use in curl
 
 Use case 
+
     <?php
         $curl = new curlWrapper();
         $file = $curl->exec("http://test.net/file.txt");
