@@ -15,20 +15,20 @@ Use example :
 
 File : config.ini
 `
-[DATABSES]
-user="root"
+    [DATABSES]
+    user="root"
 
-[DATABASE#1]
-sid="testdb"
-read="true"
-port=3306
+    [DATABASE#1]
+    sid="testdb"
+    read="true"
+    port=3306
 
-[TYPED_TEST]
-bool_1="false"
-bool_2="true"
-str="test_Stru"
-int="10"
-float="10.36"
+    [TYPED_TEST]
+    bool_1="false"
+    bool_2="true"
+    str="test_Stru"
+    int="10"
+    float="10.36"
 `
 `
  $cfg = new INIConfigurationFile("config.ini");
