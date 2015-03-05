@@ -32,7 +32,7 @@ File : config.ini
 
     $cfg = new INIConfigurationFile("config.ini");
     echo $cfg->get("DATABASE#1", "sid"); // => will print "testdb"
-    `
+    
     //Support types 
     var_dump($cfg->get("TYPED_TEST", "float")); // => will print float(10.36) 
     var_dump($cfg->get("TYPED_TEST", "bool_1")); // => will print bool(false) 
