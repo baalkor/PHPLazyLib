@@ -4,7 +4,8 @@
     {
         $a = new INIConfigurationFile("config.ini");
         $a->addSection("TEST");
-        $a->get("TEST", "dd");
+        $a->set("TEST", "abc", "true");
+        $a->writeConfig(false);
         print_r ( $a->getConfiguration() );
     }
     testConfiguationParser();
