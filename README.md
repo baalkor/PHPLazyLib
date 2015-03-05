@@ -1,2 +1,5 @@
 # PHPLazyLib
-Set of small php libraries that are more helper. Find your need, contribution is appreciated
+
+PHP Lazy Lib are a set of small PHP libraries written to facilitate tasks.
+
+
