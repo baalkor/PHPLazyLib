@@ -158,7 +158,7 @@
        * @param type $key
        * @return boolean
        */
-        public static function  sget($section, $key)
+      public static function  sget($section, $key)
       {
           
          $config = parse_ini_file(CFG_FILE, true);

@@ -1,7 +1,11 @@
 <?php
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+    require_once '../../configuration/INIConfigurationFile.php';
+    function testConfiguationParser()
+    {
+        $a = new INIConfigurationFile("config.ini");
+        $a->addSection("TEST");
+        $a->get("TEST", "dd");
+        print_r ( $a->getConfiguration() );
+    }
+    testConfiguationParser();
 ?>
