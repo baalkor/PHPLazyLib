@@ -55,22 +55,25 @@ File : config.ini
 
 This class allow to manipulate $_FILE when posting data.
 
-Example :
+Example
 
     <?php
+
         SessionFile::isUploaded(); // true if a file is beging uploaded
         SessionFile::name(); // Return form name
         SessionFile::saveFile($destination); move uploaded file to $destination
         SessionFile::read(); // Return file content
+
     ?>
 
 ###net/curlWrapper
 This class is a simple tool to use in curl
 
-Use case :
- 
-    $curl = new curlWrapper();
-    $file = $curl->exec("http://test.net/file.txt");
+Use case 
+    <?php
+        $curl = new curlWrapper();
+        $file = $curl->exec("http://test.net/file.txt");
+    ?>
 
 ### Contributions
 As the project is quite new every contribution or comment will be appreciated.
