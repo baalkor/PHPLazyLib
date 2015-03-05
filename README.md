@@ -51,7 +51,7 @@ File : config.ini
                                   // but if sets to true, it will write it 
                                  // like config.ini-<unix timestamps>
 
-`
+
 ### Contributions
 As the project is quite new every contribution or comment will be appreciated.
 
