@@ -4,9 +4,13 @@
     {
         $a = new INIConfigurationFile("config.ini");
         $a->addSection("TEST");
+        
+        
+        
+        
         $a->set("TEST", "abc", "true");
         $a->writeConfig(false);
-        print_r ( $a->getConfiguration() );
+        var_dump($a->get("TYPED_TEST", "int"));
     }
     testConfiguationParser();
 ?>
