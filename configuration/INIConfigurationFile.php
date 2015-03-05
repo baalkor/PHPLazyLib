@@ -20,10 +20,15 @@ class INIConfigurationFile extends ConfigurationFile {
     function writeConfig($overwrite=true) {
 
         $file = parent::writeConfig($overwrite);
+        $lhdl = fopen($file,"w");
         foreach ( $this->getConfiguration() as $section => $sectionValues)
         {
-           
+            fwrite($lhdl,"[$section]\n");
+            foreach ( $sectionValues as $key=>$name)
+                fwrite($lhdl,"$key=\"$name\"\n");
+            
         }
+        fclose($lhdl);
     }
 }
 ?>

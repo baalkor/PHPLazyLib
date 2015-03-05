@@ -122,10 +122,15 @@
               }
          } 
          function writeConfig($overwrite=true) {
-            if ( ! $overwrite )
-                return $this->fileName."-".time();
-            else
-                return $this->fileName; 
+             if ( ! $this->readOnly )
+             {
+                if ( ! $overwrite )
+                    return $this->fileName."-".time();
+                else
+                    return $this->fileName; 
+             }
+             else
+                 throw new RuntimeException("File is read only");
          }
          public function close() { 
                 if (is_resource($this->fileHandle))
