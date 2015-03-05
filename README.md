@@ -56,6 +56,7 @@ File : config.ini
 This class allow to manipulate $_FILE when posting data.
 
 Example :
+
     <?php
         SessionFile::isUploaded(); // true if a file is beging uploaded
         SessionFile::name(); // Return form name
@@ -66,7 +67,8 @@ Example :
 ###net/curlWrapper
 This class is a simple tool to use in curl
 
-Use case : 
+Use case :
+ 
     $curl = new curlWrapper();
     $file = $curl->exec("http://test.net/file.txt");
 
