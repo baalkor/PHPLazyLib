@@ -1,14 +1,7 @@
 <?php
-
-require_once "init.inc.php";
-if ( ! defined("MAX_MEMORY_ALLOWED"))     define("MAX_MEMORY_ALLOWED"  , "512M"  );
-if ( ! defined("PHP_MAX_EXEC_TIME"))   define("PHP_MAX_EXEC_TIME", 60*10 );
-
 class curlWrapper
 {
-    private $old_memlimit;
-    private $oldtimeout;
-    
+
     private $_chOpts = array (
         
 	CURLOPT_VERBOSE        => False,
@@ -24,19 +17,7 @@ class curlWrapper
             $this->_chOpts = $options;
         else
             $this->set_options($this->_chOpts);
-        
-        
-        
-        $this->old_memlimit = ini_get("memory_limit");
-        $this->oldtimeout   = ini_get("max_execution_time");
-        ini_set("memory_limit",MAX_MEMORY_ALLOWED  );
-        
-        
-        
-
- 
-        
-        
+          
     }
     
     public function set_option($option, $value)
@@ -68,12 +49,12 @@ class curlWrapper
 
         if ( $url != "")
             $this->set_option(CURLOPT_URL, $url);                 
-        ini_set("max_execution_time",PHP_MAX_EXEC_TIME  );
+        
         $data = curl_exec($this->_ch);
         
         if ( $data === false)
         {
-            qlog("curl error", curl_error($this->_ch));
+            throw new RuntimeException("curl error". curl_error($this->_ch));
         }
      
         return $data;
@@ -88,9 +69,6 @@ class curlWrapper
         {
             curl_close($this->_ch);
         }
-        
-          ini_set("memory_limit",$this->old_memlimit  );
-          ini_set("max_execution_time",$this->oldtimeout  );
 
     }
 }

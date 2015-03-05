@@ -4,12 +4,12 @@ PHP Lazy Lib are a set of small PHP libraries written to facilitate tasks.
 
 ## Description
 
-### Configuration File parser
+### Configuration File parser (configuration/INIConfigurationFile)
 
 This small subset contains class that allow manipulation of ini file. In some
 case you can event extends ConfigurationFile to suit your file format.
 
-At this time, only INI file are testes.
+At this time, only INI file are tested but ConfigurationFile can be extended.
 
 Use example : 
 File : config.ini
@@ -51,6 +51,24 @@ File : config.ini
                                   // but if sets to true, it will write it 
                                  // like config.ini-<unix timestamps>
 
+### session/SessionFile
+
+This class allow to manipulate $_FILE when posting data.
+
+Example :
+    <?php
+        SessionFile::isUploaded(); // true if a file is beging uploaded
+        SessionFile::name(); // Return form name
+        SessionFile::saveFile($destination); move uploaded file to $destination
+        SessionFile::read(); // Return file content
+    ?>
+
+###net/curlWrapper
+This class is a simple tool to use in curl
+
+Use case : 
+    $curl = new curlWrapper();
+    $file = $curl->exec("http://test.net/file.txt");
 
 ### Contributions
 As the project is quite new every contribution or comment will be appreciated.
